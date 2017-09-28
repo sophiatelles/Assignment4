@@ -185,7 +185,7 @@ spread(table2, key = type, value = count)
 ```
 Spread() and Gather() are complements. Gather() makes wide tables narrower and longer, and spread() makes long tables shorter and wider. 
 
-#12.4 Separating and uniting 
+# 12.4 Separating and uniting 
 Separate() pulls apart one column into multiple columns. It will split values by non-alphanumberic characters. 
 ```{r}
 table3 %>%
@@ -209,7 +209,7 @@ table5 %>%
 
 Be sure to look to the R 4 Data Science documents to refresh. 
 
-#Article 3:
+# Article 3:
 We are using nycflights13 package
 
 ```{r}
@@ -240,7 +240,7 @@ The 5 key dplyr functions are
 
 These can be used along with group_by(), which changes the cope of each function so that it operates group-by-group
 
-##Filter 
+## Filter 
 
 ```{r}
 filter(flights, month == 1, day == 1)
@@ -258,12 +258,12 @@ If you want to find flughts that werent delaneys by more than two hours, use thi
 filter(flights, !(arr_delay > 120 | dep_delay > 120))
 ```
 
-##missing values 
+## Missing values 
 
 if you have a missing value: x<-NA
 if you later find the value is.na(x)
 
-##arrange
+## Arrange
 selecting rows 
 ```{r}
 arrange(flights, year, month, day)
@@ -274,7 +274,7 @@ to order by column in descending order:
 arrange(flights, desc(arr_delay))
 ```
 
-##select
+## Select
 Best if you have a lot of data 
 
 ```{r}
@@ -293,7 +293,7 @@ select(flights, -(year:day))
 
 you can also use starts_with("letter"")
 
-##mutate()
+## Mutate()
 adds new columns 
 
 ```{r}
@@ -309,14 +309,14 @@ mutate(flights_sml,
 )
 ```
 
-##summarise()
+## Summarise()
 
 to view a single row
 ```{r}
 summarise(flights, delay = mean(dep_delay, na.rm = TRUE))
 ```
 
-##count()
+## Count()
 
 can count amounts of data points in certain categories 
 
@@ -325,15 +325,15 @@ count(flights, delay=2)
 ```
 
 
-#Article 4
+# Article 4
 
-##loadpackages
+## Loadpackages
 ```{r}
 suppressMessages(library(dplyr))
 library(nycflights13)
 ```
 
-##choosing columns (select, rename)
+## Choosing columns (select, rename)
 to show columns for carriers and flight numbers:
 ```{r}
 flights %>% select (carrier, flight) 
